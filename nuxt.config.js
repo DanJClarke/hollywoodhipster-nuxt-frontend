@@ -5,12 +5,13 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Hollywood Hipster | The hipest movie reviews this side of the west coast',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -22,8 +23,9 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
-  ],
+ css: [
+  '~/assets/css/style.scss'
+],
   /*
   ** Plugins to load before mounting the App
   */
