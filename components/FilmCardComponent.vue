@@ -32,6 +32,7 @@
 
 <script>
 import moment from 'moment'
+import {mapState, mapMutations, mapGetters, mapActions} from 'vuex';
 
 import Reviews from './ReviewsComponent'
 import Rating from './RatingComponent'
@@ -81,10 +82,7 @@ export default {
     },
 
     methods:{
-         updateRating(value){
-          this.rating = value;
-          this.ratings.push(value);
-        }
+        ...mapActions(['updateRating'])
     },
 
     computed:{
