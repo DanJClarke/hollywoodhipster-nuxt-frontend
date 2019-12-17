@@ -25,6 +25,14 @@ export default {
   css: [
     '~/assets/css/style.scss'
   ],
+ /*
+  ** age Transitions
+  */
+  transition: {
+    name: "fade",
+    mode: "out-in"
+  },
+
   /*
   ** Plugins to load before mounting the App
   */

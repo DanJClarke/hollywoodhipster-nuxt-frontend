@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {mapState, mapMutations, mapGetters, mapActions} from 'vuex';
+import {mapState, mapMutations, mapGetters, mapActions} from 'vuex'
 import FilmCard from './FilmCardComponent'
 
 export default {
@@ -20,18 +20,6 @@ export default {
 
     computed:{
        ...mapState(['films']),
-    },
-
-    mounted() {
-
-      //this.filmList =
-
-
-
-       // axios.get('/film-data')
-         //    .then(response => {
-           //     this.filmList = response.data
-             //})
     }
 }
 </script>

@@ -5,7 +5,7 @@
           <h1>Directors</h1>
           <ul>
               <li v-for="director in directors">
-                  <nuxt-link :to="{name: 'manage-director-id', params: {id: director.id}}" :key="director.id">
+                  <nuxt-link :to="{name: 'manage-directors-id', params: {id: director.id}}" :key="director.id">
                     {{ director.name }}
                   </nuxt-link>
               </li>
@@ -37,11 +37,11 @@
 export default {
 computed:{
     films(){
-        return this.$store.state.films.all;
+        return this.$store.state.films;
     },
 
     directors(){
-        return this.$store.state.directors.all;
+        return this.$store.state.directors;
     }
   },
 

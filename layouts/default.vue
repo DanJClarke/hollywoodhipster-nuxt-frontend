@@ -17,7 +17,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "node_modules/foundation-sites/scss/util/unit";
+@import "node_modules/foundation-sites/scss/util/breakpoint";
  main{
     margin-top: 70px;
   }

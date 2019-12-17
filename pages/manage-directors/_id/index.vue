@@ -10,14 +10,14 @@
         <p>Films:</p>
         <ul>
           <li v-for="film in director.films">
-            <nuxt-link :to="{name: 'film-id', params: {id: film.id}}" :key="film.id">
+            <nuxt-link :to="{name: 'manage-films-id', params: {id: film.id}}" :key="film.id">
               {{ film.title }}
             </nuxt-link>
           </li>
         </ul>
         <p>Genres they are known for:</p>
         <ul>
-          <li v-for="genre in directorsGenres">{{ genre.name }}</li>
+          <li v-for="genre in director.genres">{{ genre }}</li>
         </ul>
       </div>
     </div>
@@ -34,7 +34,7 @@
 export default {
   head(){
     return{
-      title: `${ this.director.name } Details`
+      title: `Directors Details`
     }
   },
 
