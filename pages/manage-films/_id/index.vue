@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="row">
         <div class="large-12 columns">
             <h1>{{ film.title }}</h1>
@@ -24,7 +24,7 @@
       <div>
         <form v-for="review in film.reviews" method="POST" action="`/manage-reviews/${ review.id }">
             {{ review.content }}
-            <button class="button alert inline" type="submit">Remove Review</button>
+            <button class="button alert inline" @click="deleteReview" type="submit">Remove Review</button>
         </form>
       </div>
     </div>
@@ -55,7 +55,13 @@ export default {
 
   computed:{
     film(){
-        return this.$store.state.films.all.find(film=> film.id === this.id)
+        return this.$store.state.films.find(film=> film.id === this.id)
+    }
+  },
+
+  methods:{
+    deleteReview(){
+
     }
   }
 }

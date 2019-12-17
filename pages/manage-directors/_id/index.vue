@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="row">
       <div class="large-12 columns">
         <h1>{{ director.name }}</h1>
@@ -48,7 +48,7 @@ export default {
 
   computed:{
     director(){
-        return this.$store.state.directors.all.find(director=> director.id === this.id)
+        return this.$store.state.directors.find(director=> director.id === this.id)
     }
   }
 }

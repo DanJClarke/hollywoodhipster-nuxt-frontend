@@ -5,13 +5,12 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Hollywood Hipster | The hipest movie reviews this side of the west coast',
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
-
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -23,9 +22,9 @@ export default {
   /*
   ** Global CSS
   */
- css: [
-  '~/assets/css/style.scss'
-],
+  css: [
+    '~/assets/css/style.scss'
+  ],
   /*
   ** Plugins to load before mounting the App
   */
@@ -55,11 +54,18 @@ export default {
   /*
   ** Build configuration
   */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+ build: {
+  extend(config) {
+    for (const rule of config.module.rules) {
+      if (rule.use) {
+        for (const use of rule.use) {
+          if (use.loader === 'sass-loader') {
+            use.options = use.options || {};
+            use.options.includePaths = ['node_modules/foundation-sites/scss'];
+          }
+        }
+      }
     }
-  }
+  },
+},
 }

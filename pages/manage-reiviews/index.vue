@@ -1,7 +1,5 @@
 <template>
-  <div>
-
-
+  <div class="container">
     <div class="row">
       <div class="large-12 columns">
           <h1>Directors</h1>
@@ -34,8 +32,6 @@
         -->
         </div>
     </div>
-
-
 </div>
 
 </template>
