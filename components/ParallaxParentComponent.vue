@@ -37,4 +37,8 @@ export default {
     position: relative;
     z-index: -1;
 }
+
+#parallax{
+  margin-top: -120px;
+}
 </style>

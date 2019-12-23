@@ -5,7 +5,9 @@
 // Foundation
 @import 'global';
 @import "node_modules/foundation-sites/assets/foundation";
-
+@import 'node_modules/foundation-sites/scss/util/util';
+@import 'node_modules/foundation-sites/scss/settings/settings';
+@include foundation-everything;
 
 // Variables
 @import 'utilities/variables';
@@ -97,4 +99,49 @@ main {
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+
+label {
+  display: block;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.8;
+  color: #fff;
+}
+
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea {
+  margin-bottom:0;
+}
+
+.form-col{
+  margin-bottom: 1rem;
+}
+
+.button{
+  background-color: $secondary-brand-color;
+
+  &:hover{
+    background-color: $primary-brand-color;
+  }
+}
+
+
+.invalid-feedback{
+  color: #DD8E8E;
+  display: inline-block;
 }

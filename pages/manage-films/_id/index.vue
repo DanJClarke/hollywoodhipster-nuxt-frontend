@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container medium-8 medium-offset-2 large-6 large-offset-3 columns">
     <div class="row">
         <div class="large-12 columns">
             <h1>{{ film.title }}</h1>
@@ -8,13 +8,13 @@
             <br/>
             <p>Directed by: {{ film.director.name }}</p>
 
-
+            <img width="150" :src="`/uploads/${ film.imgsrc }`" alt="`${ $film.title } poster`" />
             <p>Running time: {{ film.running_time }} </p>
             <p>Release date: {{ film.release_date }} </p>
             <p>Budget: {{ film.budget }} </p>
-
+            <p>Plot: {{ film.plot }} </p>
             <p>Genre:
-              <span v-for="genre in film.genres"> {{ genre.name }} </span>
+              <span v-for="genre in film.genres"> {{ genre.name }},  </span>
             </p>
         </div>
     </div>

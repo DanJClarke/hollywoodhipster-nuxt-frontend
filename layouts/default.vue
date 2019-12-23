@@ -9,6 +9,7 @@
 
 <script>
 import TopBar from '~/components/topBarComponent.vue'
+import {mapState, mapMutations, mapGetters, mapActions} from 'vuex'
 
 export default {
   components: {
@@ -21,6 +22,6 @@ export default {
 @import "node_modules/foundation-sites/scss/util/unit";
 @import "node_modules/foundation-sites/scss/util/breakpoint";
  main{
-    margin-top: 70px;
+    margin-top: 120px;
   }
 </style>

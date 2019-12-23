@@ -1,6 +1,6 @@
 <template>
     <div class="review" >
-        <blockquote v-if="!errors">
+        <blockquote v-if="!errorsFront">
             <p>{{ review.content }}</p>
             <cite>{{ userName }}</cite>
         </blockquote>
@@ -30,7 +30,7 @@ export default {
     data(){
         return{
             userName: '',
-            errors: false
+            errorsFront: false
         }
     },
 
@@ -40,7 +40,7 @@ export default {
         //     this.userName = response.data[0].name
         // })
         // .catch(error => {
-        //     this.errors = true;
+        //     this.errorsFront = true;
         // });
     }
 }

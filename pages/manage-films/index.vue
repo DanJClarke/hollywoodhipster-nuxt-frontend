@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-        <div class="large-12 columns">
+        <div class="large-6 columns">
             <h1>Films</h1>
-            <ul>
+            <ul class="films-list">
                <li v-for="film in films">
                     <nuxt-link :to="{name: 'manage-films-id', params: {id: film.id}}" :key="film.id">
                       {{ film.title }}
@@ -13,14 +13,12 @@
             <nuxt-link :to="`/manage-films/create`">Add a Film &raquo;</nuxt-link>
             <br/>
         </div>
-    </div>
 
-    <div class="row">
-      <div class="large-12 columns">
+      <div class="large-6 columns">
           <h1>Directors</h1>
-          <ul>
+          <ul class="directors-list">
               <li v-for="director in directors">
-                  <nuxt-link :to="{name: 'manage-directors-id', params: {id: director.id}}" :key="director.id">
+                  <nuxt-link :to="{name: 'manage-directors', params: {id: director.id}}" :key="director.id">
                     {{ director.name }}
                   </nuxt-link>
               </li>
