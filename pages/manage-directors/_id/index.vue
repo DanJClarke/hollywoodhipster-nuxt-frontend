@@ -3,7 +3,7 @@
     <div class="row">
       <div class="large-12 columns">
         <h1>{{ director.name }}</h1>
-        <nuxt-link :to="`/manage-directors/${ directors.id }/edit`">edit &raquo;</nuxt-link>
+        <nuxt-link :to="`/manage-directors/${ director.id }/edit`">edit &raquo;</nuxt-link>
         <br/>
         <br/>
         <p>Bio: <br/>{{ director.bio }}</p>

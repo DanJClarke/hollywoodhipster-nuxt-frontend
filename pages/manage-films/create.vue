@@ -93,6 +93,7 @@
 
 <script>
 import axios from 'axios'
+import {mapState, mapMutations, mapGetters, mapActions} from 'vuex'
 export default {
   middleware: ['auth'],
 
@@ -132,7 +133,8 @@ export default {
     async create(){
       await this.$axios.$post('http://hollywoodhipster-api.test/api/films', this.form)
       .then(data => {
-          this.$router.push('/manage-films');
+        this.$store.dispatch('addFilm', data.data);
+        this.$router.push('/manage-films');
       })
       .catch(err => {
           console.log(err);

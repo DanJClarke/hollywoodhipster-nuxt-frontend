@@ -6,7 +6,7 @@
             <nuxt-link :to="`/manage-films/${ film.id }/edit`">edit</nuxt-link>
             <br/>
             <br/>
-            <p>Directed by: {{ film.director.name }}</p>
+            <p>Directed by: {{ film.director }}</p>
 
             <img width="150" :src="`/uploads/${ film.imgsrc }`" alt="`${ $film.title } poster`" />
             <p>Running time: {{ film.running_time }} </p>

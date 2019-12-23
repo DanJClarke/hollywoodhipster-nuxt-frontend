@@ -33,9 +33,17 @@ export const state = () =>({
           state.films = films
       },
 
+      ADD_FILM(state, film){
+          state.films.push(film);
+      },
+
       SET_DIRECTORS(state, directors){
           state.directors = directors
-      }
+      },
+
+      ADD_DIRECTOR(state, director){
+        state.directors.push(director);
+      },
     }
 
     export const actions = {
@@ -44,21 +52,32 @@ export const state = () =>({
         let films = await axios.get(
           'http://hollywoodhipster-api.test/api/films'
         );
-        commit('SET_FILMS', films.data);
+
+        let { data: filmsData } = films.data;
+        commit('SET_FILMS', filmsData );
 
         let directors = await axios.get(
           'http://hollywoodhipster-api.test/api/directors'
         );
-        commit('SET_DIRECTORS', directors.data);
+        let { data: directorData } = directors.data;
+        commit('SET_DIRECTORS', directorData);
       },
 
-       setFilms({commit}, films){
+      setFilms({commit}, films){
            commit( "SET_FILMS", films)
-       },
+      },
 
-       setDirectors({commit}, directors){
+      addFilm({commit}, film){
+          commit( "ADD_FILM", film)
+      },
+
+      setDirectors({commit}, directors){
         commit( "SET_DIRECTORS", directors)
-       }
+      },
+
+      addDirector({commit}, director){
+        commit( "ADD_DIRECTOR", director)
+      }
     }
 
 

@@ -44,7 +44,7 @@ export default {
 
     data() {
        return{
-           ratings: this.$props.film.rating.map(({rating}) => rating) || [],
+           ratings: this.$props.film.ratings.map(({rating}) => rating) || [],
            rating: 0
        }
     },

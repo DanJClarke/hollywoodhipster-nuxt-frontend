@@ -9,7 +9,7 @@
           </div>
       </div>
       <div class="row">
-          <film-parent></film-parent>
+         <film-parent></film-parent>
       </div>
   </div>
 </template>

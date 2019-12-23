@@ -9,7 +9,7 @@
         <div class="row">
               <div class="large-12 columns">
                 <label>Directors name
-                    <input v-model="form.name" type="text" name="name" placeholder="Add a name"/>
+                    <input v-model="director.name" type="text" name="name" placeholder="Add a name"/>
                 </label>
                 <span v-if="errors.name" class="invalid-feedback" role="alert">
                   <strong>{{ errors.name[0] }}</strong>
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="large-12 columns">
                 <label>Directors Biography
-                    <textarea name="plot" rows="10" v-model="form.bio" placeholder="Please keep the directors bio brief" /></textarea>
+                    <textarea name="plot" rows="10" v-model="director.bio" placeholder="Please keep the directors bio brief" /></textarea>
                 </label>
                 <span v-if="errors.bio" class="invalid-feedback" role="alert">
                   <strong>{{ errors.bio[0] }}</strong>
@@ -36,31 +36,35 @@
 </template>
 
 <script>
-import axios from 'axios'
-import {mapState, mapMutations, mapGetters, mapActions} from 'vuex'
-export default {
-  middleware: ['auth'],
 
-  data(){
+export default {
+  head(){
     return{
-      form: {
-        name:'',
-        bio:''
-      }
+      title: `Directors Details`
     }
   },
 
-  head(){
+  data(){
     return{
-      title:'Add a Director'
+        id: this.$route.params.id,
+        form: {
+          name:'',
+          bio:''
+        }
+    }
+  },
+
+  computed:{
+    director(){
+        return this.$store.state.directors.find(director=> director.id === this.id)
     }
   },
 
   methods:{
     async create(){
-      await this.$axios.$post('http://hollywoodhipster-api.test/api/directors', this.form)
+      await this.$axios.$patch('http://hollywoodhipster-api.test/api/directors', this.form)
       .then(data => {
-          this.$store.dispatch('addDirector', data.data);
+         // this.$store.dispatch('addDirector', this.form);
           this.$router.push('/manage-directors');
       })
       .catch(err => {
@@ -70,9 +74,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
-
-
