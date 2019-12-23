@@ -6,8 +6,30 @@
         </div>
     </div>
     <div class="row">
-        <div class="medium-8 medium-offset-2 large-6 large-offset-3 columns">
+        <div class="large-12 columns">
+          <p>Hi {{ user.name }}, welcome to your movie dashboard!</p>
 
+          <ul>
+           <!--
+
+            <li>
+                <a  href="{{ route('admin.users.index') }}">
+                    User management
+                </a>
+            </li>
+
+            -->
+            <li>
+                <a href="manage-films/">
+                    Manage Films
+                </a>
+            </li>
+            <li>
+                <a href="manage-directors/">
+                    Manage Directors
+                </a>
+            </li>
+          </ul>
         </div>
     </div>
   </div>
