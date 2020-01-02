@@ -9,7 +9,7 @@
             <p>Directed by: {{ film.director }}</p>
 
             <img width="150" :src="`/uploads/${ film.imgsrc }`" alt="`${ $film.title } poster`" />
-            <p>Running time: {{ film.running_time }} </p>
+            <p>Running time: {{ film.running_time }} </p>s
             <p>Release date: {{ film.release_date }} </p>
             <p>Budget: {{ film.budget }} </p>
             <p>Plot: {{ film.plot }} </p>

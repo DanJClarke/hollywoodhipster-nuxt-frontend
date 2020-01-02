@@ -5,7 +5,7 @@
           <h1>Manage Directors</h1>
           <ul class="directors-list">
               <li v-for="(director, index) in directors" :key="index">
-                <nuxt-link :to="{name: 'manage-directors-id', params: {id: director.id}}" :key="director.id">
+                <nuxt-link :to="{name: 'manage-directors-edit', params: {id: director.id}}">
                   {{ director.name }}
                 </nuxt-link>
               </li>
